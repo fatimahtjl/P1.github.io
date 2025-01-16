@@ -1,0 +1,302 @@
+/* start navbar*/
+/* Styling untuk navbar */
+.navbar {
+  display: flex;
+ 
+  align-items: center;
+  padding: 20px 20px;
+  background-color: #343a40;
+  color: white;
+  margin-left: -500px;
+ 
+  height: 90px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Styling untuk brand */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styling untuk menu */
+.navbar-menu {
+  display: flex; /* Menata item menu secara horizontal */
+  gap: 20px; /* Memberikan jarak antar menu */
+  margin-right: -450px;
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.navbar-menu a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* end navbar */
+.konten {
+  background-color: #A3C1DA;
+}
+.title {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(0, 0, 0);
+  width: 450px;
+  height: auto;
+  margin-left: 50px;
+ }
+
+ .cont-title h1 {
+  font-size: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  color: #da6767;
+ }
+
+ .cont-title h2 {
+  font-size: 21px;
+ }
+
+ .content {
+  background-color:#f8f9fa  ;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;  
+  height: 630px;
+  
+}
+
+ 
+
+.container {
+  width: 55%;
+  text-align: right;
+}
+
+.photo-large {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+
+.photo-small {
+  width: 50%;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 10px;
+  
+}
+
+.photo-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+
+/* CONTENT 3*/
+.cont-content-3 {
+ background-color:#f8f9fa ; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+ margin-top: 30px;
+  }
+  .cont-content-3 img {
+  border-radius: 20px;
+  margin-top: 65px;
+  }
+  
+  .content-3 {
+  margin-bottom: 80px;
+  height: auto;
+  width: 300px;
+  }
+  
+  .div-3 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  padding-left: 70px;
+  height: 100px;
+  width: 600px;
+  }
+  
+  .h3-3 {
+  text-align: start;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  }
+ 
+  
+  .ul-3 {
+  color: #000;
+  height: 300px;
+  width: auto;
+  margin-left: 20px;
+  text-align: start;
+  }
+  
+  .h1-3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+  text-align: center;
+  margin-top: -40px;
+  padding-bottom: 50px;
+  margin-left: 65px;
+  color: #000;
+  }
+  .h1-2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+  text-align: center;
+  margin-top: -40px;
+  padding-bottom: 50px;
+  margin-left: 65px;
+  color: #b13939;
+  }
+  
+  .item-1 {
+  text-align: start;
+  background-color:#A3C1DA;
+  border-radius: 10px;
+  padding-top: 10px;
+  width: 200px;
+  height: 100px;
+  
+  }
+  .item-1 p{
+    color: #000; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+  }
+  /* CONTENT 3 */
+
+  /*testimoni pelanggan */
+  
+  .header {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color:#f8f9fa  ;
+    margin-top: 30px;
+    height: 400px;
+}
+
+.header h1 {
+    font-size: 38px;
+    color: #da6767;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  padding: 20px;
+}
+
+.header p {
+    font-size: 19px;
+    color: #000000;
+}
+
+.testimoni-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+    max-width: 1200px; /* Lebar maksimum */
+    margin: 0 auto; /* Pusatkan */
+    width: 100%; /* Isi seluruh lebar layar */
+    
+}
+
+.testimoni {
+    flex: 0 0 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background: #A3C1DA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   flex: 1;
+}
+
+.stars {
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.comment {
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+}
+
+.name {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: right;
+    color: #da6767;
+    font-size: 15px;
+}
+
+.testimoni-container::-webkit-scrollbar {
+    height: 15px;
+
+}
+
+.testimoni-container::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+.testimoni-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+@media (max-width: 768px) {
+  .testimoni-container {
+      width: 100%; /* Isi seluruh layar untuk perangkat kecil */
+      padding: 5px;
+  }
+}
+
+ /* Styling untuk footer */
+ .footer {
+  background-color: #343a40; /* Abu tua */
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer .social-icons a {
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+  color: #007bff; /* Efek hover */
+}
+
+.footer p {
+  font-size: 16px;
+  margin-top: 20px;
+}
