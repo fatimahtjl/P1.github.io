@@ -9,8 +9,8 @@ class user extends BaseController
         return view('user/index');
     }
 
-    public function menu(): string
+    public function dashboard(): string
     {
-        return view('user/menu');
+        return view('user/dashboard');
     }
 }

@@ -8,6 +8,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'user::index');
 $routes->get('/user', 'user::index');
 
+$routes->get('/dashboard', 'user::dashboard');
+
 $routes->get('/menu', 'menu::index');
 $routes->get('/submenu', 'menu::sub');
 
