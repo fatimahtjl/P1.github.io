@@ -1,0 +1,107 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Models\modelMember;
+use CodeIgniter\Controller;
+
+;
+
+class Home extends BaseController
+{
+
+    protected $modelMember;
+    public function index(): string
+    {
+        return view('pegawai/welcome');
+    }
+    public function dashboard(): string
+    {
+        return view('pegawai/dashboard');
+    }
+
+    public function __construct()
+    {
+        $this->modelMember = new \App\Models\modelMember();
+    }
+
+    protected $validationRules = [
+        'email' => 'required|valid_email|is_unique[users.email]',
+        'username' => 'required|alpha_numeric|is_unique[users.username]',
+        'password' => 'required|min_length[8]'
+    ];
+    public function register()
+    {
+        return view('auth/register');
+    }
+
+    public function processRegister()
+    {
+        $email = $this->request->getPost('email');
+        $username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
+
+        // Cek apakah email atau username sudah digunakan
+        if ($this->modelMember->where('email', $email)->first()) {
+            return redirect()->back()->with('error', 'Email sudah digunakan.');
+        }
+
+        if ($this->modelMember->where('username', $username)->first()) {
+            return redirect()->back()->with('error', 'Username sudah digunakan.');
+        }
+
+        // Hash password
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        // Simpan data ke database
+        $this->modelMember->insert([
+            'email' => $email,
+            'username' => $username,
+            'password' => $hashedPassword
+        ]);
+
+        return redirect()->to('/login')->with('success', 'Registrasi berhasil. Silakan login.');
+    }
+
+
+    public function login()
+    {
+        return view('auth/login');
+    }
+
+    public function processLogin()
+    {
+        $username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
+
+        // Cari user berdasarkan email
+        $user = $this->modelMember->where('username', $username)->first();
+
+        if (!$user) {
+            return redirect()->back()->with('error', 'Username tidak terdaftar.');
+        }
+
+        // Verifikasi password
+        if (!password_verify($password, $user['password'])) {
+            return redirect()->back()->with('error', 'Password salah.');
+        }
+
+        // Set session user
+        session()->set([
+            'id_pembeli' => $user['id_pembeli'],
+            'username' => $user['username'],
+            'email' => $user['email'],
+            'isLoggedIn' => true,
+        ]);
+
+        return redirect()->to('/dashboard');
+    }
+
+
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/login')->with('success', 'Berhasil logout.');
+    }
+}
+
