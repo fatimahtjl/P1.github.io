@@ -1,15 +1,17 @@
-/* start navbar*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 /* Styling untuk navbar */
 .navbar {
   display: flex;
-
+  justify-content: space-between; /* Menyebarkan brand dan menu ke kiri dan kanan */
   align-items: center;
-  padding: 20px 20px;
+  padding: 20px;
   background-color: #343a40;
   color: white;
-  margin-left: -500px;
-
-  height: 90px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
@@ -21,22 +23,62 @@
 
 /* Styling untuk menu */
 .navbar-menu {
-  display: flex; /* Menata item menu secara horizontal */
-  gap: 20px; /* Memberikan jarak antar menu */
-  margin-right: -450px;
+  display: flex;
+  gap: 20px; /* Jarak antar menu */
+  margin-left: auto; /* Memastikan menu selalu di sebelah kanan */
 }
 
 .navbar-menu a {
   color: white;
   text-decoration: none;
   font-size: 18px;
-  padding: 5px;
+  padding: 5px 10px; /* Padding untuk link menu */
 }
 
 .navbar-menu a:hover {
   background-color: #555;
   border-radius: 5px;
 }
+
+/* Media queries untuk responsif */
+@media (max-width: 768px) {
+  .navbar {
+      padding: 15px; /* Mengurangi padding navbar */
+  }
+
+  .navbar-brand {
+      font-size: 20px; /* Mengurangi ukuran font brand */
+  }
+
+  .navbar-menu {
+      gap: 15px; /* Mengurangi jarak antar menu */
+  }
+
+  .navbar-menu a {
+      font-size: 16px; /* Mengurangi ukuran font menu */
+      padding: 5px 8px; /* Mengurangi padding menu */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+      padding: 10px; /* Mengurangi padding navbar lebih jauh */
+  }
+
+  .navbar-brand {
+      font-size: 18px; /* Mengurangi ukuran font brand lebih jauh */
+  }
+
+  .navbar-menu {
+      gap: 10px; /* Mengurangi jarak antar menu lebih jauh */
+  }
+
+  .navbar-menu a {
+      font-size: 14px; /* Mengurangi ukuran font menu lebih jauh */
+      padding: 5px; /* Mengurangi padding menu lebih jauh */
+  }
+}
+
 
 /* end navbar */
 .konten {
@@ -104,9 +146,77 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 15px;
-
-  gap: 80px;
+  gap: 80px; /* Jarak antar elemen pada layar besar */
 }
+
+/* Media Queries untuk layar kecil */
+@media (max-width: 768px) {
+  .photo-row {
+    flex-direction: column;  /* Menyusun gambar secara vertikal */
+    align-items: center;     /* Pusatkan gambar */
+    gap: 20px;               /* Jarak antar gambar */
+  }
+
+  .photo-large, .photo-small {
+    width: 80%;               /* Gambar menyesuaikan lebar layar kecil */
+    margin-right: 0;          /* Hapus margin kanan */
+  }
+  .content {
+    height: 1560px;
+  }
+  .photo-row {
+    width: 700px;
+    margin-left: -100px;
+  }
+}
+
+
+  /* Responsive Styles */
+  @media (max-width: 1000px) {
+    .title {
+      width: 100%;
+      margin-left: -5px;
+    }
+    .cont-title h1 {
+      font-size: 40px;
+    }
+
+    .cont-content-3 {
+      height: 1100px;
+    }
+    .div-3 {
+      grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar kecil */
+      padding-left: 20px; /* Padding disesuaikan */
+      max-width: 100%; /* Lebar maksimum penuh */
+    }
+  
+    .h1-3,
+    .h1-2 {
+      margin-left: 0; /* Margin diatur ulang */
+      padding-bottom: 30px; /* Padding disesuaikan */
+    }
+  
+    .item-1 {
+      max-width: 100%; /* Lebar maksimum penuh */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .div-3 {
+      grid-template-columns: 1fr; /* 1 kolom pada layar sangat kecil */
+      padding-left: 10px; /* Padding disesuaikan */
+    }
+  
+    .h1-3,
+    .h1-2 {
+      font-size: 24px; /* Ukuran font lebih kecil */
+      padding-bottom: 20px; /* Padding disesuaikan */
+    }
+  
+    .item-1 p {
+      font-size: 14px; /* Ukuran font lebih kecil */
+    }
+  }
 
 /* CONTENT 3*/
 .cont-content-3 {
@@ -157,6 +267,7 @@
   text-align: center;
   margin-top: -40px;
   padding-bottom: 50px;
+  font-size: 40px;
   margin-left: 65px;
   color: #000;
 }
@@ -164,7 +275,9 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: bold;
   text-align: center;
+  font-size: 30px;
   margin-top: -40px;
+  font-weight: 30px;
   padding-bottom: 50px;
   margin-left: 65px;
   color:  #da6767;
@@ -183,6 +296,47 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
 }
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .cont-content-3 {
+      height: 1000px;
+    }
+    .div-3 {
+      grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar kecil */
+      padding-left: 20px; /* Padding disesuaikan */
+      max-width: 100%; /* Lebar maksimum penuh */
+    }
+    .ul-3 {
+      margin-bottom: 170px;
+    }
+  
+    .h1-3,
+    .h1-2 {
+      margin-left: 0; /* Margin diatur ulang */
+      padding-bottom: 30px; /* Padding disesuaikan */
+      
+  
+    .item-1 {
+      max-width: 100%; /* Lebar maksimum penuh */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .div-3 {
+      grid-template-columns: 1fr; /* 1 kolom pada layar sangat kecil */
+      padding-left: 10px; /* Padding disesuaikan */
+    }
+  
+    .h1-3,
+    .h1-2 {
+      font-size: 24px; /* Ukuran font lebih kecil */
+      padding-bottom: 20px; /* Padding disesuaikan */
+    }
+  
+    .item-1 p {
+      font-size: 14px; /* Ukuran font lebih kecil */
+    }
+  } }
 /* CONTENT 3 */
 
 /*testimoni pelanggan */
@@ -306,3 +460,22 @@
   margin-top: 20px;
 }
 
+@media (max-width: 768px) {
+  .testimoni-container {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 60px; /* Tambahkan jarak lebih besar untuk layar kecil */
+  }
+  .header {
+    height: 710px;
+  }
+  .header p{
+    margin-top: -30px;
+    margin-bottom: 20px;
+  }
+  .footer {
+      padding-top: 60px; /* Tambahkan padding lebih besar untuk layar kecil */
+  }
+  .testimoni-container {
+    height: 550px;
+  }}

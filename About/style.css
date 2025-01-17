@@ -1,0 +1,77 @@
+/* Styling untuk navbar */
+.navbar {
+    display: flex;
+  
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #343a40;
+    color: white;
+    margin-left: -500px;
+  
+    height: 90px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  /* Styling untuk brand */
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Styling untuk menu */
+  .navbar-menu {
+    display: flex; /* Menata item menu secara horizontal */
+    gap: 20px; /* Memberikan jarak antar menu */
+    margin-right: -450px;
+  }
+  
+  .navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px;
+  }
+  
+  .navbar-menu a:hover {
+    background-color: #555;
+    border-radius: 5px;
+  }
+  
+  /* end navbar */
+
+
+
+  /* Styling untuk footer */
+.footer {
+    background-color: #343a40; /* Abu tua */
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footer .social-icons a {
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #007bff; /* Efek hover */
+  }
+  
+  .footer p {
+    font-size: 16px;
+    margin-top: 20px;
+  }

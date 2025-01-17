@@ -1,76 +1,117 @@
-/* start navbar*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 /* Styling untuk navbar */
 .navbar {
-    display: flex;
-   
-    align-items: center;
-    padding: 20px 20px;
-    background-color: #343a40;
-    color: white;
-    margin-left: -500px;
-   
-    height: 90px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: space-between; /* Menyebarkan brand dan menu ke kiri dan kanan */
+  align-items: center;
+  padding: 20px;
+  background-color: #343a40;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* Styling untuk brand */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styling untuk menu */
+.navbar-menu {
+  display: flex;
+  gap: 20px; /* Jarak antar menu */
+  margin-left: auto; /* Memastikan menu selalu di sebelah kanan */
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 10px; /* Padding untuk link menu */
+}
+
+.navbar-menu a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Media queries untuk responsif */
+@media (max-width: 768px) {
+  .navbar {
+      padding: 15px; /* Mengurangi padding navbar */
   }
-  
-  /* Styling untuk brand */
+
   .navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
+      font-size: 20px; /* Mengurangi ukuran font brand */
   }
-  
-  /* Styling untuk menu */
+
   .navbar-menu {
-    display: flex; /* Menata item menu secara horizontal */
-    gap: 20px; /* Memberikan jarak antar menu */
-    margin-right: -450px;
+      gap: 15px; /* Mengurangi jarak antar menu */
   }
-  
+
   .navbar-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 5px;
+      font-size: 16px; /* Mengurangi ukuran font menu */
+      padding: 5px 8px; /* Mengurangi padding menu */
   }
-  
-  .navbar-menu a:hover {
-    background-color: #555;
-    border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+      padding: 10px; /* Mengurangi padding navbar lebih jauh */
   }
+
+  .navbar-brand {
+      font-size: 18px; /* Mengurangi ukuran font brand lebih jauh */
+  }
+
+  .navbar-menu {
+      gap: 10px; /* Mengurangi jarak antar menu lebih jauh */
+  }
+
+  .navbar-menu a {
+      font-size: 14px; /* Mengurangi ukuran font menu lebih jauh */
+      padding: 5px; /* Mengurangi padding menu lebih jauh */
+  }
+}
+
   
   /* end navbar */
   .konten {
     background-color: #A3C1DA;
   }
+  
   .title {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(0, 0, 0);
     width: 450px;
     height: auto;
     margin-left: 50px;
-   }
+  }
   
-   .cont-title h1 {
+  .cont-title h1 {
     font-size: 40px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
     color: #da6767;
-   }
-  
-   .cont-title h2 {
-    font-size: 21px;
-   }
-  
-   .content {
-    background-color:#f8f9fa  ;
-    display: flex;
-    align-items: center; 
-    justify-content: space-between;  
-    height: 680px;
-    
   }
   
-   
+  .cont-title h2 {
+    font-size: 21px;
+  }
+  
+  .content {
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: row; /* Menyusun gambar dan teks secara horizontal di layar besar */
+    align-items: center;
+    justify-content: space-between;
+    height: 680px;
+  }
   
   .container {
     width: 55%;
@@ -89,7 +130,6 @@
     height: auto;
     border-radius: 15px;
     margin-top: 10px;
-    
   }
   
   .photo-row {
@@ -99,84 +139,167 @@
     gap: 5px;
   }
   
+  /* Media Queries untuk layar kecil */
+  @media (max-width: 800px) {
+    .content {
+      flex-direction: column;  /* Mengubah tata letak menjadi kolom (vertikal) */
+      align-items: center;     /* Pusatkan elemen-elemen */
+      height: auto;            /* Sesuaikan tinggi dengan konten */
+    }
+  
+    .photo-large{
+      width: 550px;              /* Gambar mengikuti lebar layar */
+      margin-top: 20px; 
+    }
+    .photo-small {
+      width: 100%;              /* Gambar mengikuti lebar layar */
+      margin-top: 20px;        /* Memberi jarak antar gambar */
+    }
+  
+    .container {
+      width: 100%;             /* Penuhkan lebar layar */
+      text-align: center;      /* Pusatkan teks */
+      margin-bottom: 20px;     /* Memberi jarak bawah untuk konten */
+    }
+  
+    /* Membuat gambar bersusun satu per satu secara vertikal */
+    .photo-row {
+      width: 550px;
+      flex-direction: column;  /* Menyusun gambar secara vertikal */
+      gap: 20px;               /* Memberikan jarak antar gambar */
+      align-items: center;     /* Pusatkan gambar dalam kolom */
+    }
+    .title {
+      width: 550px;
+    }
+    .cont-title h2 {
+      font-size: 22px;
+      margin-top: 20px;
+      
+    }
+  }
+  
+  
   
   /* CONTENT 3*/
   .cont-content-3 {
-   background-color:#f8f9fa ; 
+    background-color: #f8f9fa;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-   margin-top: 30px;
-    }
-    .cont-content-3 img {
+    margin-top: 30px;
+  }
+  .cont-content-3 img {
     border-radius: 20px;
     margin-top: 65px;
-    }
-    
-    .content-3 {
+  }
+  
+  .content-3 {
     margin-bottom: 80px;
     height: auto;
     width: 300px;
-    }
-    
-    .div-3 {
+  }
+  
+  .div-3 {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
     padding-left: 70px;
     height: 100px;
     width: 600px;
-    }
-    
-    .h3-3 {
+  }
+  
+  .h3-3 {
     text-align: start;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: bold;
-    }
-   
-    
-    .ul-3 {
+  }
+  
+  .ul-3 {
     color: #000;
     height: 300px;
     width: auto;
     margin-left: 20px;
     text-align: start;
-    }
-    
-    .h1-3 {
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      font-weight: bold;
+  }
+  
+  .h1-3 {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: bold;
     text-align: center;
     margin-top: -40px;
     padding-bottom: 50px;
+    font-size: 40px;
     margin-left: 65px;
     color: #000;
-    }
-    .h1-2 {
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      font-weight: bold;
+  }
+  .h1-2 {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: bold;
     text-align: center;
+    font-size: 30px;
     margin-top: -40px;
+    font-weight: 30px;
     padding-bottom: 50px;
     margin-left: 65px;
-    color: #b13939;
-    }
-    
-    .item-1 {
+    color:  #da6767;
+  }
+  
+  .item-1 {
     text-align: start;
-    background-color:#A3C1DA;
+    background-color: #a3c1da;
     border-radius: 10px;
     padding-top: 10px;
     width: 200px;
     height: 100px;
+  }
+  .item-1 p {
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+  }
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .cont-content-3 {
+        height: 1000px;
+      }
+      .div-3 {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar kecil */
+        padding-left: 20px; /* Padding disesuaikan */
+        max-width: 100%; /* Lebar maksimum penuh */
+      }
+      .ul-3 {
+        margin-bottom: 170px;
+      }
     
+      .h1-3,
+      .h1-2 {
+        margin-left: 0; /* Margin diatur ulang */
+        padding-bottom: 30px; /* Padding disesuaikan */
+        
+    
+      .item-1 {
+        max-width: 100%; /* Lebar maksimum penuh */
+      }
     }
-    .item-1 p{
-      color: #000; 
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-size: 15px;
-    }
+    
+    @media (max-width: 480px) {
+      .div-3 {
+        grid-template-columns: 1fr; /* 1 kolom pada layar sangat kecil */
+        padding-left: 10px; /* Padding disesuaikan */
+      }
+    
+      .h1-3,
+      .h1-2 {
+        font-size: 24px; /* Ukuran font lebih kecil */
+        padding-bottom: 20px; /* Padding disesuaikan */
+      }
+    
+      .item-1 p {
+        font-size: 14px; /* Ukuran font lebih kecil */
+      }
+    } }
     /* CONTENT 3 */
   
     /*testimoni pelanggan */
@@ -300,3 +423,22 @@
     font-size: 16px;
     margin-top: 20px;
   }
+  @media (max-width: 768px) {
+    .testimoni-container {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 60px; /* Tambahkan jarak lebih besar untuk layar kecil */
+    }
+    .header {
+      height: 650px;
+    }
+    .header p{
+      margin-top: -30px;
+      margin-bottom: 20px;
+    }
+    .footer {
+        padding-top: 60px; /* Tambahkan padding lebih besar untuk layar kecil */
+    }
+    .testimoni-container {
+      height: 470px;
+    }}
