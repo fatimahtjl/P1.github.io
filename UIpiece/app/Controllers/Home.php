@@ -13,11 +13,11 @@ class Home extends BaseController
     protected $modelMember;
     public function index(): string
     {
-        return view('pegawai/welcome');
+        return view('halaman/welcome');
     }
     public function dashboard(): string
     {
-        return view('pegawai/dashboard');
+        return view('halaman/dashboard');
     }
 
     public function __construct()
@@ -25,11 +25,6 @@ class Home extends BaseController
         $this->modelMember = new \App\Models\modelMember();
     }
 
-    protected $validationRules = [
-        'email' => 'required|valid_email|is_unique[users.email]',
-        'username' => 'required|alpha_numeric|is_unique[users.username]',
-        'password' => 'required|min_length[8]'
-    ];
     public function register()
     {
         return view('auth/register');
@@ -101,7 +96,8 @@ class Home extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login')->with('success', 'Berhasil logout.');
+
+        return redirect()->to('/login')->with('success', 'Anda telah logout.');
     }
 }
 
