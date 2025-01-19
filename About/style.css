@@ -93,13 +93,18 @@ body {
   }
   
   .container {
-    height: 100vh;
+    margin-top: 30px;
+    height: 90vh;
+    max-width: 2000px;
+    margin-left: 23px;
     position: relative;
+    
   }
   
   .background-image {
     width: 100%;
-    max-width: 10000px;
+    max-width: 1300px;
+    filter: blur(2px); /* Membuat gambar terlihat blur */
     height: 100%;
     object-fit: cover;
     position: absolute;
@@ -115,27 +120,217 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 2); /* Efek gelap pada gambar */
   }
   
   .text {
     position: absolute;
-    top: 50%;
+    top: 36%;
     left: 50px;
     transform: translateY(-50%);
-    color: rgb(255, 0, 0);
-    font-family: Arial, sans-serif;
+   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
   }
   
   .text h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 55px;
+    color: #000000;
+    text-shadow: 3px 5px white;
+    font-weight: 1000;
+  }
+  
+  .text h2 { 
+    font-size:60px ;
+    margin-left: 90px;
+    color: white;
+    font-weight: 1000;
+    text-shadow: 3px 5px black;
   }
   
   .text p {
-    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    
+    font-size: 2.2rem;
+    font-weight: 1000;
   }
   
+  /* Mengatur latar belakang halaman dan ukuran */
+  .content {
+    background-color: #f0f8ff; /* Latar belakang biru muda */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 800px; /* Mengisi seluruh tinggi layar */
+    margin: 0;
+}
+
+/* Mengatur gambar agar berada di tengah */
+.image-container img {
+    width: 350px; /* Ukuran gambar */
+    height: auto;
+    margin-top: -100px;
+    
+}
+
+/* Teks 'UIPIECE' */
+.title {
+    font-size: 50px;
+    
+    font-weight: bold;
+   
+    color: #4682B4; /* Biru Baja */
+    margin-top: -5px; /* Jarak antara gambar dan teks */
+}
+
+/* Deskripsi tentang UIPIECE */
+.description {
+    font-size: 20px;
+    color: #555555; /* Abu-abu gelap untuk teks deskripsi */
+    text-align: center;
+    margin-top: 10px; /* Jarak antara teks dan deskripsi */
+    max-width: 600px; /* Lebar maksimal teks agar rapi */
+}
+
+
+
+
+ /* Wrapper untuk konten utama */
+.content-1 {
+  display: flex;
+  flex-direction: row; /* Default posisi gambar dan teks secara horizontal */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 10px;
+  flex-wrap: wrap; /* Membuat elemen bisa membungkus saat layar kecil */
+}
+
+/* Gambar di sebelah kiri */
+.image-containerrr img {
+  width: 500px; /* Ukuran gambar */
+  height: auto;
+  border-radius: 10px;
+  margin-right: 10px; /* Jarak antara gambar dan teks */
+}
+
+/* Konten teks untuk visi dan misi */
+.text-container {
+  max-width: 600px;
+  color: #555555; /* Warna abu-abu untuk teks */
+}
+
+.title {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f89fbe; /* Biru Baja */
+  margin-bottom: 20px; /* Jarak antara judul dan konten */
+}
+
+.section-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px; /* Jarak antara subjudul dan konten */
+}
+
+.section-content {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #a7a7f5;
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.section-contentt {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #f89fbe;
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Menambahkan media queries untuk layar kecil */
+@media (max-width: 768px) {
+  .content-1 {
+      flex-direction: column; /* Mengubah posisi menjadi vertikal pada layar kecil */
+      align-items: center; /* Menyelaraskan konten di tengah */
+  }
+
+  .image-containerrr img {
+      width: 80%; /* Menyesuaikan ukuran gambar agar lebih kecil di layar kecil */
+      margin-right: 0; /* Menghapus margin kanan pada gambar */
+      margin-bottom: 20px; /* Menambahkan jarak bawah pada gambar */
+  }
+
+  .text-container {
+      max-width: 90%; /* Membuat konten lebih lebar pada layar kecil */
+  }
+
+  .title {
+      font-size: 30px; /* Mengurangi ukuran font untuk judul */
+  }
+
+  .section-title {
+      font-size: 24px; /* Mengurangi ukuran font untuk subjudul */
+  }
+
+  .section-content,
+  .section-contentt {
+      font-size: 16px; /* Mengurangi ukuran font untuk konten */
+  }
+}
+
+@media (max-width: 480px) {
+  .content-1 {
+      padding: 20px; /* Menambahkan padding lebih pada perangkat kecil */
+  }
+
+  .image-containerrr img {
+      width: 100%; /* Membuat gambar lebih lebar pada layar sangat kecil */
+  }
+
+  .title {
+      font-size: 24px; /* Menyesuaikan ukuran font pada layar kecil */
+  }
+
+  .section-title {
+      font-size: 20px; /* Menyesuaikan ukuran font pada layar kecil */
+  }
+
+  .section-content,
+  .section-contentt {
+      font-size: 14px; /* Menyesuaikan ukuran font pada layar kecil */
+  }
+}
+
+
+
+
+/* Wrapper untuk konten utama */
+.content11 {
+  background-color:#f0f8ff; ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+
+/* Gambar di sebelah kanan */
+.image-containerr img {
+  margin-right: -80px;
+  width: 550px; /* Ukuran gambar */
+  height: auto;
+  border-radius: 10px;
+}
+
+
 
 
   /* Styling untuk footer */
