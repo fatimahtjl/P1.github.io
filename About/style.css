@@ -1,44 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  
+}
+
 /* Styling untuk navbar */
 .navbar {
-    display: flex;
-  
-    align-items: center;
-    padding: 20px 20px;
-    background-color: #343a40;
-    color: white;
-    margin-left: -500px;
-  
-    height: 90px;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: space-between; /* Menyebarkan brand dan menu ke kiri dan kanan */
+  align-items: center;
+  padding: 20px;
+  background-color: #343a40;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* Styling untuk brand */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styling untuk menu */
+.navbar-menu {
+  display: flex;
+  gap: 20px; /* Jarak antar menu */
+  margin-left: auto; /* Memastikan menu selalu di sebelah kanan */
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 10px; /* Padding untuk link menu */
+}
+
+.navbar-menu a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Media queries untuk responsif */
+@media (max-width: 768px) {
+  .navbar {
+      padding: 15px; /* Mengurangi padding navbar */
   }
-  
-  /* Styling untuk brand */
+
   .navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
+      font-size: 20px; /* Mengurangi ukuran font brand */
   }
-  
-  /* Styling untuk menu */
+
   .navbar-menu {
-    display: flex; /* Menata item menu secara horizontal */
-    gap: 20px; /* Memberikan jarak antar menu */
-    margin-right: -450px;
+      gap: 15px; /* Mengurangi jarak antar menu */
   }
-  
+
   .navbar-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 5px;
+      font-size: 16px; /* Mengurangi ukuran font menu */
+      padding: 5px 8px; /* Mengurangi padding menu */
   }
-  
-  .navbar-menu a:hover {
-    background-color: #555;
-    border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+      padding: 10px; /* Mengurangi padding navbar lebih jauh */
   }
-  
+
+  .navbar-brand {
+      font-size: 18px; /* Mengurangi ukuran font brand lebih jauh */
+  }
+
+  .navbar-menu {
+      gap: 10px; /* Mengurangi jarak antar menu lebih jauh */
+  }
+
+  .navbar-menu a {
+      font-size: 14px; /* Mengurangi ukuran font menu lebih jauh */
+      padding: 5px; /* Mengurangi padding menu lebih jauh */
+  }
+}
+
   /* end navbar */
 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+  }
+  
+  .container {
+    height: 100vh;
+    position: relative;
+  }
+  
+  .background-image {
+    width: 100%;
+    max-width: 10000px;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -3; /* Agar gambar berada di belakang teks */
+  }
+  
+  .container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 2); /* Efek gelap pada gambar */
+  }
+  
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    color: rgb(255, 0, 0);
+    font-family: Arial, sans-serif;
+  }
+  
+  .text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .text p {
+    font-size: 1.5rem;
+  }
+  
 
 
   /* Styling untuk footer */

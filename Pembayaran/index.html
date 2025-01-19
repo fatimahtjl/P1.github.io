@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metode Pembayaran</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(125deg, #a0c4ff, #b8e6d4);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      height: 800px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .container h2 {
+        font-size: 40px;
+        color: black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+    .mb-3  {
+        font-size: 22px;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+   
+  </style>
+</head>
+
+
+
+      <div>
+        <div class="container mt-5">
+            <h2 class=" text-center mb-4">Pembayaran</h2>
+            <form id="paymentForm">
+                <!-- Pilihan Metode Pembayaran -->
+                <div class="mb-3">
+                    <label for="paymentMethod" class="form-label">Metode Pembayaran</label>
+                    <select class="form-select" id="paymentMethod" required>
+                        <option value="">Pilih metode...</option>
+                        <option value="shopeepay">ShopeePay</option>
+                        <option value="gopay">GoPay</option>
+                        <option value="dana">DANA</option>
+                        <option value="ovo">OVO</option>
+                        <option value="bank">Transfer Bank</option>
+                        <option value="pulsa">Pulsa</option>
+                    </select>
+                </div>
+    
+                <!-- Masukkan Nomor Pembayaran -->
+                <div class="mb-3">
+                    <label for="paymentNumber" class="form-label">Nomor Pembayaran</label>
+                    <input type="text" class="form-control" id="paymentNumber" placeholder="Masukkan nomor pembayaran" required>
+                </div>
+    
+                <!-- Nama Pengguna -->
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nama Pengguna</label>
+                    <input type="text" class="form-control" id="username" placeholder="Masukkan nama pengguna" required>
+                </div>
+    
+                <!-- Masukkan Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Masukkan email" required>
+                </div>
+    
+                <!-- Masukkan Password -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+                </div>
+    
+                <!-- Total Pembayaran -->
+                <div class="mb-3">
+                    <label for="totalAmount" class="form-label">Total Pembayaran</label>
+                    <input type="number" class="form-control" id="totalAmount" placeholder="Masukkan jumlah pembayaran" required>
+                </div>
+    
+                <!-- Tombol Submit -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Bayar Sekarang</button>
+                </div>
+            </form> 
+    
+            <!-- Kotak Pesan Pembayaran Berhasil -->
+            <div id="successMessage" class="alert alert-success mt-4" style="display: none;">
+                Pembayaran berhasil! Terima kasih telah melakukan pembayaran.
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <script>
+            // Menangani pengiriman form pembayaran
+            document.getElementById('paymentForm').addEventListener('submit', function(event) {
+                event.preventDefault();  // Mencegah form untuk submit secara default
+                
+                // Menampilkan kotak pesan setelah pembayaran berhasil
+                document.getElementById('successMessage').style.display = 'block';
+            });
+        </script>
+    </body>
+    </html>
+    
