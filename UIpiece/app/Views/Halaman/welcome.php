@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com">
     </script>
-    <link href="<?= base_url(); ?>https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css"
-        rel="stylesheet" />
     <title>Usporty</title>
 
 <body>
@@ -37,13 +35,13 @@
                 </p>
 
                 <div class="mt-8 flex flex-wrap gap-4 text-center">
-                    <a href="<?= base_url('menu'); ?>"
-                        class="block w-full rounded bg-gray-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-gray-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto">
+                    <a href="<?= base_url('visit/menu'); ?>"
+                        class="block w-full rounded bg-gray-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-gray-700 focus:outline-none active:bg-white sm:w-auto">
                         Ayo Cari!
                     </a>
 
-                    <a href="#"
-                        class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-gray-900 shadow hover:text-gray-600 focus:outline-none focus:ring active:text-rose-500 sm:w-auto">
+                    <a href="#About"
+                        class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-gray-900 shadow hover:text-gray-600 focus:outline-none active:text-rose-500 sm:w-auto">
                         Liat Promo
                     </a>
                 </div>
@@ -53,7 +51,7 @@
     <!-- CONTENT 1 END -->
 
     <!-- CONTENT 2 -->
-    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8" id="About">
         <div class="mx-auto max-w-3xl text-center">
             <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Sudah banyak orang yang memakai design UI dari
                 kami.</h2>
@@ -160,103 +158,6 @@
         </article>
     </div>
     <!-- CONTENT 3 END -->
-
-    <!-- CONTENT 4 -->
-    <section>
-        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-            <header>
-                <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">PRODUK TERBARU</h2>
-
-                <p class="mt-4 max-w-md text-gray-500">
-                    Kenalkan desain UI terbaru kami yang modern dan intuitif! Tingkatkan pengalaman pengguna dengan
-                    tampilan elegan dan fungsionalitas cerdas. 🚀✨
-                </p>
-            </header>
-
-            <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                <li>
-                    <a href="#" class="group block overflow-hidden">
-                        <img src="https://img.freepik.com/free-vector/smart-home-management-application_23-2148627768.jpg?t=st=1736394213~exp=1736397813~hmac=3a3a0018fe2bd7f5acb64885918ab53b1f50320970c049c23a287190157d70fd&w=900"
-                            alt=""
-                            class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-
-                        <div class="relative bg-white pt-3">
-                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                                Basic Tee
-                            </h3>
-
-                            <p class="mt-2">
-                                <span class="sr-only"> Regular Price </span>
-
-                                <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                            </p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" class="group block overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                            alt=""
-                            class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-
-                        <div class="relative bg-white pt-3">
-                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                                Basic Tee
-                            </h3>
-
-                            <p class="mt-2">
-                                <span class="sr-only"> Regular Price </span>
-
-                                <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                            </p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" class="group block overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                            alt=""
-                            class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-
-                        <div class="relative bg-white pt-3">
-                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                                Basic Tee
-                            </h3>
-
-                            <p class="mt-2">
-                                <span class="sr-only"> Regular Price </span>
-
-                                <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                            </p>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" class="group block overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                            alt=""
-                            class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-
-                        <div class="relative bg-white pt-3">
-                            <h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                                Basic Tee
-                            </h3>
-
-                            <p class="mt-2">
-                                <span class="sr-only"> Regular Price </span>
-
-                                <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                            </p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- CONTENT 4 END -->
 
     <!-- TESTIMONI -->
     <!-- Form Testimoni -->

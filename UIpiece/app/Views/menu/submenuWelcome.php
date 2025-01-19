@@ -10,7 +10,7 @@
 
 <body>
     <!-- NAVBAR -->
-    <?= $this->include('templates/navdash'); ?>
+    <?= $this->include('templates/navbar'); ?>
 
     <!-- CONTENT 1 -->
     <div class="flex-1 border-e bg-white">
@@ -25,20 +25,20 @@
     <!-- CONTENT 2 -->
     <?php if (isset($product) && !empty($product)): ?>
         <div class="flow-root m-6">
-            <dl class="-my-3 divide-y divide-gray-900 text-sm">
+            <dl class="-my-3 divide-y divide-gray-900 text-sm p-3">
                 <div class="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
                     <dt class="font-medium text-gray-900">Title</dt>
-                    <dd class="text-gray-700 sm:col-span-2"><?= $product['name']; ?></dd>
+                    <dd class="text-gray-900 sm:col-span-2"><?= $product['name']; ?></dd>
                 </div>
 
                 <div class="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
                     <dt class="font-medium text-gray-900">Stock</dt>
-                    <dd class="text-gray-700 sm:col-span-2"><?= $product['stock']; ?></dd>
+                    <dd class="text-gray-900 sm:col-span-2"><?= $product['stock']; ?></dd>
                 </div>
 
                 <div class="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
                     <dt class="font-medium text-gray-900">Price</dt>
-                    <dd class="text-gray-700 sm:col-span-2"><?= number_format($product['price'], 2); ?></dd>
+                    <dd class="text-gray-900 sm:col-span-2"><?= number_format($product['price'], 2); ?></dd>
                 </div>
             </dl>
         </div>
