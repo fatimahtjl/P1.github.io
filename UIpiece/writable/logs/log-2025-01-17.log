@@ -6320,3 +6320,128 @@ in SYSTEMPATH\Router\Router.php on line 737.
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  8 SYSTEMPATH\rewrite.php(44): require_once('C:\\CODING\\PROGRAMMING\\PROGRAMMING.OTODIDAK\\GITHUB CONNECT\\PHP\\UIpiece\\public\\index.php')
+CRITICAL - 2025-01-17 17:53:33 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "keen-slider@6.8.6"
+[Method: GET, Route: https:/cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('https:/cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('https:/cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\CODING\\PROGRAMMING\\PROGRAMMING.KULIAH\\KULIAH PROGRAMMING\\P1.github.io\\UIpiece\\public\\index.php')
+DEBUG - 2025-01-17 17:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-17 17:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-17 17:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-17 17:53:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-17 17:53:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-17 17:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-17 17:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-17 17:54:15 --> mysqli_sql_exception: Table 'penjualan.users' doesn't exist in C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Validation\StrictRules\Rules.php(232): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Validation\Validation.php(338): CodeIgniter\Validation\StrictRules\Rules->is_unique('budi123@gmail.c...', 'email', Array, NULL, 'email')
+#6 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Validation\Validation.php(203): CodeIgniter\Validation\Validation->processRules('email', 'email', 'budi123@gmail.c...', Array, Array, 'email')
+#7 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\BaseModel.php(1576): CodeIgniter\Validation\Validation->run(Array, NULL, NULL)
+#8 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\BaseModel.php(808): CodeIgniter\BaseModel->validate(Array)
+#9 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#10 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\app\Controllers\Home.php(57): CodeIgniter\Model->insert(Array)
+#11 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Home->processRegister()
+#12 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#13 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#15 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#16 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#17 C:\CODING\PROGRAMMING\PROGRAMMING.KULIAH\KULIAH PROGRAMMING\P1.github.io\UIpiece\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('C:\\CODING\\PROGR...')
+#18 {main}
+CRITICAL - 2025-01-17 17:54:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'penjualan.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(232): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(338): CodeIgniter\Validation\StrictRules\Rules->is_unique('budi123@gmail.com', 'email', [...], null, 'email')
+ 4 SYSTEMPATH\Validation\Validation.php(203): CodeIgniter\Validation\Validation->processRules('email', 'email', 'budi123@gmail.com', [...], [...], 'email')
+ 5 SYSTEMPATH\BaseModel.php(1576): CodeIgniter\Validation\Validation->run([...], null, null)
+ 6 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Home.php(57): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->processRegister()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\CODING\\PROGRAMMING\\PROGRAMMING.KULIAH\\KULIAH PROGRAMMING\\P1.github.io\\UIpiece\\public\\index.php')
+CRITICAL - 2025-01-17 17:54:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'penjualan.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'budi123@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'budi123@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(232): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\Validation.php(338): CodeIgniter\Validation\StrictRules\Rules->is_unique('budi123@gmail.com', 'email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(203): CodeIgniter\Validation\Validation->processRules('email', 'email', 'budi123@gmail.com', [...], [...], 'email')
+ 7 SYSTEMPATH\BaseModel.php(1576): CodeIgniter\Validation\Validation->run([...], null, null)
+ 8 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 9 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+10 APPPATH\Controllers\Home.php(57): CodeIgniter\Model->insert([...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->processRegister()
+12 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\CODING\\PROGRAMMING\\PROGRAMMING.KULIAH\\KULIAH PROGRAMMING\\P1.github.io\\UIpiece\\public\\index.php')
+CRITICAL - 2025-01-17 17:54:15 --> [Caused by] mysqli_sql_exception: Table 'penjualan.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'budi123@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'budi123@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'budi123@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(232): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\Validation.php(338): CodeIgniter\Validation\StrictRules\Rules->is_unique('budi123@gmail.com', 'email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(203): CodeIgniter\Validation\Validation->processRules('email', 'email', 'budi123@gmail.com', [...], [...], 'email')
+ 8 SYSTEMPATH\BaseModel.php(1576): CodeIgniter\Validation\Validation->run([...], null, null)
+ 9 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+10 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+11 APPPATH\Controllers\Home.php(57): CodeIgniter\Model->insert([...])
+12 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->processRegister()
+13 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+14 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+18 SYSTEMPATH\rewrite.php(44): require_once('C:\\CODING\\PROGRAMMING\\PROGRAMMING.KULIAH\\KULIAH PROGRAMMING\\P1.github.io\\UIpiece\\public\\index.php')
+DEBUG - 2025-01-17 17:54:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-17 17:54:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-17 17:54:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-17 17:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-01-17 17:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

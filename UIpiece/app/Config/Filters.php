@@ -34,6 +34,8 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'auth'          => \App\Filters\Auth::class,
+        'noauth'        => \App\Filters\NoAuth::class,
     ];
 
     /**
@@ -74,6 +76,7 @@ class Filters extends BaseFilters
             // 'invalidchars',
         ],
         'after' => [
+            'toolbar' ,
             // 'honeypot',
             // 'secureheaders',
         ],
@@ -103,5 +106,8 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+        'auth' => ['before' => ['cart/*','cart', 'dashboard']],
+        'noauth' => ['before' => ['login/*','login','','register','register/*']],
+    ];
 }

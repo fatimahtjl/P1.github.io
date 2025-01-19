@@ -73,11 +73,19 @@
                             </div>
                         <?php } ?>
 
+                        <!-- view/login.php -->
+                        <?php if (session()->getFlashdata('message')): ?>
+                            <div class=" col-span-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                                role="alert">
+                                <?= session()->getFlashdata('message') ?>
+                            </div>
+                        <?php endif; ?>
+
                         <div class="col-span-6">
                             <label for="username" class="block text-sm font-medium text-gray-700">
                                 Username
                             </label>
-                            <input type="text" id="username" name="username" 
+                            <input type="text" id="username" name="username"
                                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm p-3" />
                         </div>
 
@@ -102,7 +110,7 @@
 
                             <p class="mt-4 text-sm text-gray-500 sm:mt-0">
                                 belum punya akun?
-                                <a href="<?= base_url('register'); ?>" class="text-gray-700 underline" >Buat akun</a>.
+                                <a href="<?= base_url('register'); ?>" class="text-gray-700 underline">Buat akun</a>.
                             </p>
                         </div>
                         <!-- Konfirmasi END -->
@@ -111,6 +119,10 @@
             </main>
         </div>
     </section>
+
+    <script>
+
+    </script>
 </body>
 
 </html>
