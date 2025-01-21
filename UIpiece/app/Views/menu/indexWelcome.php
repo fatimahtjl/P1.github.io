@@ -10,7 +10,7 @@
 
 <body>
     <!-- NAVBAR -->
-    <?= $this->include('templates/navdash'); ?>
+    <?= $this->include('templates/navbar'); ?>
 
     <!-- MAIN -->
     <div class="flex-1 border-e bg-white">
@@ -30,7 +30,7 @@
 
                 <?php if (!empty($products)): ?>
                     <div class="mx-auto mt-8 max-w-xl">
-                        <form action="/search" method="get" class="sm:flex sm:gap-4">
+                        <form action="/search/v" method="get" class="sm:flex sm:gap-4">
                             <div class="sm:flex-1">
                                 <label for="email" class="sr-only">Cari Design</label>
 
@@ -53,7 +53,7 @@
                     </div>
                 <?php else: ?>
                     <div class="mx-auto mt-8 max-w-xl">
-                        <form action="/search" method="get" class="sm:flex sm:gap-4">
+                        <form action="/search/v" method="get" class="sm:flex sm:gap-4">
                             <div class="sm:flex-1">
                                 <label for="email" class="sr-only">Cari Design</label>
 
@@ -117,7 +117,6 @@
         <!-- FOOTER -->
         <?= $this->include('templates/footer') ?>
     </div>
-
 </body>
 
 </html>

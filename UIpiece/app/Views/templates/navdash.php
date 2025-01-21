@@ -5,7 +5,7 @@
             <div class="flex-1 md:flex md:items-center md:gap-12">
                 <ul class="flex items-start space-x-4">
                     <li>
-                        <a class="block text-white mr-2" href="#">
+                        <a class="block text-white mr-2" href="<?= base_url('') ?>">
                             <span class="sr-only">Home</span>
                             <h3 class="text-xl">UIpiece</h3>
                         </a>
@@ -28,17 +28,17 @@
                     <ul class="flex items-center gap-6 text-sm">
                         <li>
                             <a class="text-white px-3 py-2 rounded transition hover:text-gray-900 hover:bg-gray-300"
-                                href="#"> About </a>
+                                href="<?= base_url('#About') ?>"> About </a>
                         </li>
 
                         <li>
                             <a class="text-white px-3 py-2 rounded transition hover:text-gray-900 hover:bg-gray-300"
-                                href="#"> Careers </a>
+                                href="<?= base_url('menu') ?>"> Product </a>
                         </li>
 
                         <li>
                             <a class="text-white px-3 py-2 rounded transition hover:text-gray-900 hover:bg-gray-300"
-                                href="#"> History </a>
+                                href="<?= base_url('#contact') ?>"> Contact </a>
                         </li>
 
                         <li>
@@ -78,15 +78,17 @@
                 <ul class="flex flex-col items-start gap-4 text-sm bg-gray-700 p-4">
                     <li>
                         <a class="text-white px-3 py-2 rounded transition hover:text-gray-900 hover:bg-gray-300"
-                            href="#"> About </a>
+                            href="<?= base_url('#About') ?>"> About </a>
                     </li>
+
                     <li>
                         <a class="text-white px-3 py-2 rounded transition hover:text-gray-900 hover:bg-gray-300"
-                            href="#"> Careers </a>
+                            href="<?= base_url('menu') ?>"> Product </a>
                     </li>
+
                     <li>
                         <a class="text-white px-3 py-2 rounded transition hover:text-gray-900 hover:bg-gray-300"
-                            href="#"> History </a>
+                            href="<?= base_url('#contact') ?>"> Contact </a>
                     </li>
 
                     <li>
