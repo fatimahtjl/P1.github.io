@@ -197,117 +197,131 @@ body {
 
 
  /* Wrapper untuk konten utama */
-.content-1 {
-  display: flex;
-  flex-direction: row; /* Default posisi gambar dan teks secara horizontal */
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 10px;
-  flex-wrap: wrap; /* Membuat elemen bisa membungkus saat layar kecil */
-}
 
-/* Gambar di sebelah kiri */
-.image-containerrr img {
-  width: 500px; /* Ukuran gambar */
-  height: auto;
-  border-radius: 10px;
-  margin-right: 10px; /* Jarak antara gambar dan teks */
-}
-
-/* Konten teks untuk visi dan misi */
-.text-container {
-  max-width: 600px;
-  color: #555555; /* Warna abu-abu untuk teks */
-}
-
-.title {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f89fbe; /* Biru Baja */
-  margin-bottom: 20px; /* Jarak antara judul dan konten */
-}
-
-.section-title {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 10px; /* Jarak antara subjudul dan konten */
-}
-
-.section-content {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #a7a7f5;
-  font-weight: 700;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.section-contentt {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #f89fbe;
-  font-weight: 700;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-/* Menambahkan media queries untuk layar kecil */
-@media (max-width: 768px) {
   .content-1 {
-      flex-direction: column; /* Mengubah posisi menjadi vertikal pada layar kecil */
-      align-items: center; /* Menyelaraskan konten di tengah */
+    display: flex;
+    flex-direction: row; /* Default posisi gambar dan teks secara horizontal */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 10px;
+    flex-wrap: wrap; /* Membuat elemen bisa membungkus saat layar kecil */
   }
-
+  
+  /* Gambar di sebelah kiri */
   .image-containerrr img {
-      width: 80%; /* Menyesuaikan ukuran gambar agar lebih kecil di layar kecil */
-      margin-right: 0; /* Menghapus margin kanan pada gambar */
-      margin-bottom: 20px; /* Menambahkan jarak bawah pada gambar */
+    width: 500px; /* Ukuran gambar */
+    height: auto;
+    border-radius: 10px;
+    margin-right: 10px; /* Jarak antara gambar dan teks */
   }
-
+  
+  /* Konten teks untuk visi dan misi */
   .text-container {
-      max-width: 90%; /* Membuat konten lebih lebar pada layar kecil */
+    max-width: 600px;
+    color: #555555; /* Warna abu-abu untuk teks */
   }
-
+  
   .title {
-      font-size: 30px; /* Mengurangi ukuran font untuk judul */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f89fbe; /* Biru Baja */
+    margin-bottom: 20px; /* Jarak antara judul dan konten */
   }
-
+  
   .section-title {
-      font-size: 24px; /* Mengurangi ukuran font untuk subjudul */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Jarak antara subjudul dan konten */
   }
-
-  .section-content,
+  
+  .section-content {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #a7a7f5;
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
   .section-contentt {
-      font-size: 16px; /* Mengurangi ukuran font untuk konten */
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #f89fbe;
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
-}
-
-@media (max-width: 480px) {
-  .content-1 {
-      padding: 20px; /* Menambahkan padding lebih pada perangkat kecil */
+  
+  /* Menambahkan media queries untuk layar kecil */
+  @media (max-width: 768px) {
+    .content-1 {
+        flex-direction: column; /* Mengubah posisi menjadi vertikal pada layar kecil */
+        align-items: center; /* Menyelaraskan konten di tengah */
+    }
+  
+    .image-containerrr img {
+        width: 80%; /* Menyesuaikan ukuran gambar agar lebih kecil di layar kecil */
+        margin-right: 0; /* Menghapus margin kanan pada gambar */
+        margin-bottom: 20px; /* Menambahkan jarak bawah pada gambar */
+    }
+  
+    .text-container {
+        max-width: 90%; /* Membuat konten lebih lebar pada layar kecil */
+        margin-top: 20px; /* Menambahkan jarak atas pada konten */
+    }
+  
+    .title {
+        font-size: 30px; /* Mengurangi ukuran font untuk judul */
+    }
+  
+    .section-title {
+        font-size: 24px; /* Mengurangi ukuran font untuk subjudul */
+    }
+  
+    .section-content,
+    .section-contentt {
+        font-size: 16px; /* Mengurangi ukuran font untuk konten */
+    }
   }
-
-  .image-containerrr img {
-      width: 100%; /* Membuat gambar lebih lebar pada layar sangat kecil */
+  
+  @media (max-width: 480px) {
+    .content-1 {
+        padding: 20px; /* Menambahkan padding lebih pada perangkat kecil */
+    }
+  
+    .image-containerrr img {
+        width: 100%; /* Membuat gambar lebih lebar pada layar sangat kecil */
+    }
+  
+    .title {
+        font-size: 24px; /* Menyesuaikan ukuran font pada layar kecil */
+    }
+  
+    .section-title {
+        font-size: 20px; /* Menyesuaikan ukuran font pada layar kecil */
+    }
+  
+    .section-content,
+    .section-contentt {
+        font-size: 14px; /* Menyesuaikan ukuran font pada layar kecil */
+    }
   }
-
-  .title {
-      font-size: 24px; /* Menyesuaikan ukuran font pada layar kecil */
+  
+  /* Tambahkan kode ini untuk membuat .text-container berada di bawah gambar secara responsif */
+  @media (max-width: 768px) {
+    .content-1 {
+        flex-direction: column;
+    }
+    .image-containerrr {
+        margin-bottom: 20px;
+    }
+    .text-container {
+        margin-top: 0;
+    }
   }
-
-  .section-title {
-      font-size: 20px; /* Menyesuaikan ukuran font pada layar kecil */
-  }
-
-  .section-content,
-  .section-contentt {
-      font-size: 14px; /* Menyesuaikan ukuran font pada layar kecil */
-  }
-}
-
 
 
 
@@ -329,6 +343,26 @@ body {
   height: auto;
   border-radius: 10px;
 }
+/* Menambahkan aturan hanya untuk layar kecil */
+@media (max-width: 768px) {
+  .content-1 {
+    flex-direction: column; /* Mengatur elemen menjadi vertikal */
+    align-items: center; /* Menyelaraskan elemen di tengah */
+  }
+
+  .image-containerrr img {
+    margin-bottom: 20px; /* Menambahkan jarak bawah pada gambar */
+    margin-right: 0; /* Menghapus margin kanan */
+  }
+
+  .text-container {
+ 
+    flex-direction: column;
+    margin-top: 0; /* Menghapus jarak tambahan di atas teks */
+    max-width: 90%; /* Memperluas teks agar lebih proporsional di layar kecil */
+  }
+}
+
 
 
 
