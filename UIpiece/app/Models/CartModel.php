@@ -7,29 +7,34 @@ use CodeIgniter\Model;
 class CartModel extends Model
 {
     protected $table = 'cart';
-    protected $allowedFields = ['id', 'product_id', 'quantity'];
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['id_pembeli', 'product_id', 'quantity', 'price'];
 
-    public function getCart()
+    public function getCartItems($id_pembeli)
     {
-        return $this->join('produk', 'produk.id = cart.product_id')
-            ->select('produk.name, produk.price, cart.quantity, cart.id, (produk.price * cart.quantity) as subtotal')
+        return $this->select('produk.id as product_id, produk.name, produk.price, cart.quantity')
+            ->join('produk', 'produk.id = cart.product_id')
+            ->where('cart.id_pembeli', $id_pembeli)
             ->findAll();
     }
 
-
-    public function addToCart($productId)
+    public function addToCart($id_pembeli, $product_id)
     {
-        $muncul = $this->where('product_id', $productId)->first();
-
-        if ($muncul) {
-            $this->update($muncul['product_id'], ['quantity' => $muncul['quantity'] + 1]);
+        $existingItem = $this->where(['id_pembeli' => $id_pembeli, 'product_id' => $product_id])->first();
+        if ($existingItem) {
+            $this->update($existingItem['id'], ['quantity' => $existingItem['quantity'] + 1]);
         } else {
-            $this->insert(['product_id' => $productId, 'quantity' => 1]);
+            $this->insert(['id_pembeli' => $id_pembeli, 'product_id' => $product_id, 'quantity' => 1]);
         }
     }
 
-    public function removeFromCart($id)
+    public function removeFromCart($id_pembeli, $product_id)
     {
-        $this->delete($id);
+        $this->where(['id_pembeli' => $id_pembeli, 'product_id' => $product_id])->delete();
+    }
+
+    public function clearCart()
+    {
+        $this->where('id_pembeli', session()->get('id_pembeli'))->delete();
     }
 }

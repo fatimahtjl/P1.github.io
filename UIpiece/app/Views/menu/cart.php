@@ -24,16 +24,16 @@
                     <div class="mt-8">
                         <ul class="space-y-4">
                             <?php foreach ($cart as $id => $item): ?>
-                                <li class="items-center bg-gray-200 gap-4 p-4 rounded-lg">
+                                <li class="flex items-center bg-gray-200 gap-4 p-4 rounded-lg">
                                     <div class="flex-1">
                                         <h3 class="text-lg font-semibold text-gray-900"><?= $item['name']; ?></h3>
 
                                         <dl class="mt-2 space-y-2 text-sm text-gray-600">
-                                            <div class="flex justify-between">
+                                            <div class="flex">
                                                 <dt>Price:</dt>
                                                 <dd>Rp <?= number_format($item['price'], 2); ?></dd>
                                             </div>
-                                            <div class="flex justify-between">
+                                            <div class="flex">
                                                 <dt>Quantity:</dt>
                                                 <dd><?= $item['quantity']; ?></dd>
                                             </div>
@@ -41,18 +41,22 @@
                                     </div>
 
                                     <div class="flex items-center gap-2 mt-3">
-                                        <a href="/cart/remove/<?= $item['id']; ?>"
-                                            onclick="return confirm('Are you sure you want to remove this item?')"
-                                            class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
-                                            Remove
-                                        </a>
+                                        <?php if (isset($item['product_id'])): ?>
+                                            <a href="/cart/remove/<?= $item['product_id']; ?>"
+                                                onclick="return confirm('Are you sure you want to remove this item?')"
+                                                class="bg-red-500 text-white px-4 py-4 rounded hover:bg-red-600">
+                                                Remove
+                                            </a>
+                                        <?php else: ?>
+                                            <p class="text-red-500">Product ID not found</p>
+                                        <?php endif; ?>
                                     </div>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
                 <?php else: ?>
-                    <p class="text-gray-700">Your cart is empty!</p>
+                    <p class="mt-5 text-xl text-gray-700 text-center">Your cart is empty!</p>
                 <?php endif; ?>
             </div>
 
@@ -63,10 +67,18 @@
                             class="mr-5 inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none active:text-blue-500">
                             kembali
                         </a>
-                        <a href="#"
-                            class="inline-block shrink-0 rounded-md border border-yellow-400 bg-yellow-400 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-yellow-600 focus:outline-none active:text-yellow-500">
-                            Checkout
-                        </a>
+
+                        <?php if (isset($item['product_id'])): ?>
+                            <form action="<?= base_url('checkout') ?>" method="get">
+                                <a href="/checkout/<?= $item['product_id']; ?>" class=" inline-block shrink-0 rounded-md border border-yellow-400 bg-yellow-400
+                                    px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent
+                                    hover:text-yellow-600 focus:outline-none active:text-yellow-500">
+                                    Checkout
+                                </a>
+                            </form>
+                        <?php else: ?>
+                            <p class="bg-red-500 text-white rounded-md px-12 py-3">No Item</p>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

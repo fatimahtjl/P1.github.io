@@ -73,7 +73,7 @@
                         <?= csrf_field() ?>
 
                         <div class="col-span-6">
-                            <label for="FirstName" class="block text-sm font-medium text-gray-700">
+                            <label for="username" class="block text-sm font-medium text-gray-700">
                                 Username
                             </label>
                             <input type="text" id="username" name="username" name="username"
