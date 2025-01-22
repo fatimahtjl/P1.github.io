@@ -3,39 +3,42 @@
 namespace App\Controllers;
 
 use App\Models\CartModel;
-use CodeIgniter\Controller;
 
 class Cart extends BaseController
 {
-    protected $cartModel;
-
-    public function __construct()
-    {
-        $this->cartModel = new CartModel();
-    }
-
-    // Menampilkan halaman cart
     public function index()
     {
         $cartModel = new CartModel();
-        $cart = $cartModel->getCart();
-        return view('menu/cart', ['cart' => $cart]);
-
+        $data['cart'] = $cartModel->getCartItems(session()->get('id_pembeli'));
+        return view('menu/cart', $data);
     }
 
-    // Menambahkan barang ke keranjang
     public function add()
     {
-        $productId = $this->request->getPost('product_id');
-
-        $this->cartModel->addToCart($productId);
+        $cartModel = new CartModel();
+        $product_id = $this->request->getPost('product_id');
+        $cartModel->addToCart(session()->get('id_pembeli'), $product_id);
         return redirect()->to('/cart');
     }
 
-    // Menghapus barang dari keranjang
-    public function remove($id)
+    public function remove($product_id)
     {
-        $this->cartModel->removeFromCart($id);
+        $cartModel = new CartModel();
+        $cartModel->removeFromCart(session()->get('id_pembeli'), $product_id);
         return redirect()->to('/cart');
+    }
+
+    public function clearCart()
+    {
+        $cartModel = new CartModel();
+
+        // Ambil id_pembeli dari request
+        $idPembeli = $this->request->getPost('id_pembeli');
+
+        if ($cartModel->where('id_pembeli', $idPembeli)->delete()) {
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Keranjang berhasil dikosongkan.']);
+        }
+
+        return $this->response->setJSON(['status' => 'error', 'message' => 'Gagal menghapus keranjang.']);
     }
 }

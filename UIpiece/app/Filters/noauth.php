@@ -13,6 +13,8 @@ class NoAuth implements FilterInterface
         if (session()->get('isLoggedIn')) {
             return redirect()->to('/dashboard'); // Ganti dengan halaman utama setelah login
         }
+
+        // Jika pengguna login dan mencoba mengakses halaman admin
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)

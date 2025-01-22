@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ProductModel;
 
-class product extends BaseController
+class Product extends BaseController
 {
     protected $productModel;
 
@@ -21,16 +21,14 @@ class product extends BaseController
 
     public function sub($id)
     {
-        $productModel = new ProductModel();
-        $product = $productModel->get($id);
+        $product = $this->productModel->find($id);
         return view('menu/submenu', ['product' => $product]);
     }
 
     public function search()
     {
         $keyword = $this->request->getGet('search');
-        $productModel = new ProductModel();
-        $products = $productModel->searchProducts($keyword);
+        $products = $this->productModel->like('name', $keyword)->findAll();
         return view('menu/index', ['products' => $products, 'keyword' => $keyword]);
     }
 }

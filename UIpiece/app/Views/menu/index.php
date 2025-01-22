@@ -85,19 +85,19 @@
         <div class="flex justify-center content-center max-sm:flex-wrap pb-10 bg-gray-50">
             <?php foreach ($products as $product): ?>
                 <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg mx-3">
-                    <img alt=""
-                        src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                    <?php $imagePath = "/uploads/" . htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8'); ?>
+                    <img src="<?= $imagePath ?>" alt="<?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?>"
                         class="h-56 w-full object-cover" />
 
                     <div class="bg-white p-2 sm:p-6">
-                        <time datetime="2022-10-10" class="block text-xs text-gray-500"> 10th Oct 2022 </time>
-
-                        <a href="submenu/<?= $product['id']; ?>">
-                            <h3 class="mt-0.5 text-lg text-gray-900"><?= $product['name']; ?></h3>
+                        <a href="submenu/<?= htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>">
+                            <h3 class="mt-0.5 text-lg text-gray-900">
+                                <?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8'); ?>
+                            </h3>
                         </a>
 
                         <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                            Stock : <?= $product['stock']; ?>
+                            Stock : <?= htmlspecialchars($product['stock'], ENT_QUOTES, 'UTF-8'); ?>
                         </p>
                         <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
                             Price : <?= number_format($product['price'], 2); ?>
@@ -105,7 +105,8 @@
                     </div>
                     <form action="/cart/add" method="post" class="p-2 m-2">
                         <?= csrf_field(); ?>
-                        <input type="hidden" name="product_id" value="<?= $product['id']; ?>">
+                        <input type="hidden" name="product_id"
+                            value="<?= htmlspecialchars($product['id'], ENT_QUOTES, 'UTF-8'); ?>">
                         <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
                             Add to Cart
                         </button>

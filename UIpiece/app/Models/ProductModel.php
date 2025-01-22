@@ -8,7 +8,12 @@ class ProductModel extends Model
 {
     protected $table = 'produk';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'price', 'stock'];
+    protected $allowedFields = ['name', 'price', 'stock', 'image'];
+
+    public function getPriceById($id)
+    {
+        return $this->where('id', $id)->first();
+    }
 
     public function get($id)
     {

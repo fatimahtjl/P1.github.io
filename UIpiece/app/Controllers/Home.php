@@ -19,6 +19,10 @@ class Home extends BaseController
     {
         return view('halaman/dashboard');
     }
+    public function admin(): string
+    {
+        return view('halaman/admin');
+    }
 
     public function __construct()
     {
@@ -52,7 +56,8 @@ class Home extends BaseController
         $this->modelMember->insert([
             'email' => $email,
             'username' => $username,
-            'password' => $hashedPassword
+            'password' => $hashedPassword,
+            'role' => 'user'
         ]);
 
         return redirect()->to('/login')->with('success', 'Registrasi berhasil. Silakan login.');
@@ -69,7 +74,7 @@ class Home extends BaseController
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        // Cari user berdasarkan email
+        // Cari user berdasarkan username
         $user = $this->modelMember->where('username', $username)->first();
 
         if (!$user) {
@@ -86,10 +91,15 @@ class Home extends BaseController
             'id_pembeli' => $user['id_pembeli'],
             'username' => $user['username'],
             'email' => $user['email'],
+            'role' => $user['role'],
             'isLoggedIn' => true,
         ]);
 
-        return redirect()->to('/dashboard');
+        if ($user['role'] == 'admin') {
+            return redirect()->to('/admin');
+        } else {
+            return redirect()->to('/dashboard');
+        }
     }
 
 
