@@ -11,18 +11,21 @@
 
         <ul class="mt-7 flex justify-center gap-6 md:gap-8">
             <li>
-                <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
-                    <span class="sr-only">Facebook</span>
-                    <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                            clip-rule="evenodd" />
+                <a href="https://www.linkedin.com/in/ugisugimanr/" rel="noreferrer" target="_blank"
+                    class="text-gray-700 transition hover:text-teal-600/75">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
                     </svg>
                 </a>
             </li>
 
             <li>
-                <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
+                <a href="https://www.instagram.com/fatimahtjl/" rel="noreferrer" target="_blank"
+                    class="text-gray-700 transition hover:text-teal-600/75">
                     <span class="sr-only">Instagram</span>
                     <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd"
@@ -33,7 +36,8 @@
             </li>
 
             <li>
-                <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
+                <a href="https://github.com/fatimahtjl/P1.github.io" rel="noreferrer" target="_blank"
+                    class="text-gray-700 transition hover:text-teal-600/75">
                     <span class="sr-only">GitHub</span>
                     <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd"

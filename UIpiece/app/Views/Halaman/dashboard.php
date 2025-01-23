@@ -104,7 +104,7 @@
                 <div class="p-4 sm:p-6">
                     <time datetime="2022-10-10" class="block text-xs text-white/90"> 1st Jan 2025 </time>
 
-                    <a href="#">
+                    <a href="<?= base_url('dashboard/promo')?>">
                         <h3 class="mt-0.5 text-lg text-white">Promo Awal Tahun!</h3>
                     </a>
 
@@ -125,7 +125,7 @@
                 <div class="p-4 sm:p-6">
                     <time datetime="2022-10-10" class="block text-xs text-white/90"> 1st Jan 2025 </time>
 
-                    <a href="#">
+                    <a href="<?= base_url('dashboard/promo')?>">
                         <h3 class="mt-0.5 text-lg text-white">New Product!</h3>
                     </a>
 
@@ -146,7 +146,7 @@
                 <div class="p-4 sm:p-6">
                     <time datetime="2022-10-10" class="block text-xs text-white/90"> 6th Jan 2025 </time>
 
-                    <a href="#">
+                    <a href="<?= base_url('dashboard/promo')?>">
                         <h3 class="mt-0.5 text-lg text-white">Black Friday Sale!</h3>
                     </a>
 
@@ -182,7 +182,7 @@
         <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
             <div class="max-w-7xl items-end justify-between sm:flex sm:pe-6 lg:pe-8">
                 <h2 class="max-w-xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                    Read trusted reviews from our customers
+                    Baca Testimoni Pembeli
                 </h2>
             </div>
 

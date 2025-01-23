@@ -10,28 +10,50 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body>
+<body class="bg-gray-100">
+    <!-- NAVBAR -->
     <div class="max-w-md mx-auto p-4" x-data="{ showModal: false }">
-        <div class="space-y-4">
+        <div class="bg-white space-y-4 shadow rounded-md p-5">
+
             <div>
                 <h2 class="text-lg font-semibold text-gray-900">Informasi Rekening Bank</h2>
             </div>
             <div>
-                <p class="text-sm text-gray-700">Nama Bank: <span class="font-medium">Bank XYZ</span></p>
-                <p class="text-sm text-gray-700">Nomor Rekening: <span class="font-medium">1234567890</span></p>
-                <p class="text-sm text-gray-700">Nama Pemilik Rekening: <span class="font-medium">John Doe</span></p>
+                <p class="text-sm text-gray-700 text-base">Nama Bank: <span class="font-bold text-lg">Bank BCA</span>
+                </p>
+                <p class="text-sm text-gray-700 text-base">Nomor Rekening: <span
+                        class="font-bold text-lg">1234567890</span></p>
+                <p class="text-sm text-gray-700 text-base">Nama Pemilik Rekening: <span class="font-bold text-lg">UGI
+                        SUGIMAN</span></p>
             </div>
-            <form id="paymentInfoForm" action="/checkout/submit-order" method="post">
-                <input type="hidden" name="id_pembeli" value="<?= $id_pembeli; ?>">
-                <!-- Mengambil id_pembeli dari session -->
-                <?php foreach ($products as $product): ?>
-                    <input type="hidden" name="product_id[]" value="<?= $product['product_id']; ?>">
-                    <!-- Mengambil product_id dari database -->
-                <?php endforeach; ?>
-                <button type="button" @click="showModal = true"
-                    class="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Konfirmasi
-                    Pembayaran</button>
-            </form>
+            <p class="text-gray-600 mb-4">Silakan pastikan Anda telah melakukan transfer pembayaran ke rekening yang
+                telah disediakan. Jika sudah, konfirmasi pembayaran untuk melanjutkan proses.</p>
+
+            <ul class="list-disc pl-5 text-gray-600 mb-4">
+                <li>Pastikan nominal transfer sesuai dengan jumlah yang tertera.</li>
+                <li>Gunakan nomor rekening yang telah diberikan saat proses checkout.</li>
+                <li>Simpan bukti transfer untuk keperluan konfirmasi.</li>
+            </ul>
+
+            <div class="text-sm text-gray-500 mt-4">
+                Harap selesaikan pembayaran dalam waktu 24 jam untuk memastikan pesanan Anda diproses tepat waktu.
+            </div>
+
+            <div class="flex">
+                <a href="<?= base_url('checkout/payment-method') ?>" class="mr-3 py-2 px-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">Ganti Pembayaran</a>
+
+                <form id="paymentInfoForm" action="/checkout/submit-order" method="post">
+                    <input type="hidden" name="id_pembeli" value="<?= $id_pembeli; ?>">
+                    <!-- Mengambil id_pembeli dari session -->
+                    <?php foreach ($products as $product): ?>
+                        <input type="hidden" name="product_id[]" value="<?= $product['product_id']; ?>">
+                        <!-- Mengambil product_id dari database -->
+                    <?php endforeach; ?>
+                    <button type="button" @click="showModal = true"
+                        class="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Konfirmasi
+                        Pembayaran</button>
+                </form>
+            </div>
         </div>
 
         <!-- Modal -->

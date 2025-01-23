@@ -20,14 +20,13 @@
                     <h1 class="text-xl font-bold text-gray-900 sm:text-3xl">Keranjang Belanja</h1>
                 </header>
 
-                <?php if (isset($cart) && !empty($cart)): ?>
-                    <div class="mt-8">
+                <?php if (!empty($cart)): ?>
+                    <div class="mt-8 ">
                         <ul class="space-y-4">
                             <?php foreach ($cart as $id => $item): ?>
                                 <li class="flex items-center bg-gray-200 gap-4 p-4 rounded-lg">
                                     <div class="flex-1">
                                         <h3 class="text-lg font-semibold text-gray-900"><?= $item['name']; ?></h3>
-
                                         <dl class="mt-2 space-y-2 text-sm text-gray-600">
                                             <div class="flex">
                                                 <dt>Price:</dt>
@@ -39,30 +38,32 @@
                                             </div>
                                         </dl>
                                     </div>
-
                                     <div class="flex items-center gap-2 mt-3">
-                                        <?php if (isset($item['product_id'])): ?>
-                                            <a href="/cart/remove/<?= $item['product_id']; ?>"
-                                                onclick="return confirm('Are you sure you want to remove this item?')"
-                                                class="bg-red-500 text-white px-4 py-4 rounded hover:bg-red-600">
-                                                Remove
-                                            </a>
-                                        <?php else: ?>
-                                            <p class="text-red-500">Product ID not found</p>
-                                        <?php endif; ?>
+                                        <a href="/cart/remove/<?= $item['product_id']; ?>"
+                                            onclick="return confirm('Yakin mau di Hapus?')"
+                                            class="bg-red-500 text-white px-4 py-4 rounded hover:bg-red-600">
+                                            Remove
+                                        </a>
                                     </div>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
+
+                    <div class="mt-8 border-t text-right border-gray-100 pt-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Total Harga</h3>
+                        <p class="text-lg font-bold text-gray-800">Rp <?= number_format($total, 2, ',', '.'); ?>
+                        </p>
+                    </div>
                 <?php else: ?>
-                    <p class="mt-5 text-xl text-gray-700 text-center">Your cart is empty!</p>
+                    <p class="mt-5 text-xl text-gray-700 text-right mr-9">Your cart is empty!</p>
                 <?php endif; ?>
+
             </div>
 
-            <div class="mt-8 flex justify-center border-t border-gray-100 pt-8">
+            <div class="mt-8 flex justify-end mr-10 border-t border-gray-100 pt-8">
                 <div class="w-screen max-w-lg space-y-4">
-                    <div class="flex justify-center">
+                    <div class="flex text-right">
                         <a href="<?= base_url('menu') ?>"
                             class="mr-5 inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none active:text-blue-500">
                             kembali

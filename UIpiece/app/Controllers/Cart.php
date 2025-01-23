@@ -9,9 +9,32 @@ class Cart extends BaseController
     public function index()
     {
         $cartModel = new CartModel();
-        $data['cart'] = $cartModel->getCartItems(session()->get('id_pembeli'));
+        $idPembeli = session()->get('id_pembeli');
+
+        // Validasi id_pembeli
+        if (empty($idPembeli)) {
+            return redirect()->to('/login')->with('error', 'Harap login terlebih dahulu.');
+        }
+
+        // Ambil data keranjang
+        $data['cart'] = $cartModel->getCartItems($idPembeli);
+
+        // Debug jika data keranjang kosong
+        if (empty($data['cart'])) {
+            return view('menu/cart', ['cart' => [], 'total' => 0]); // Keranjang kosong
+        }
+
+        // Hitung total harga
+        $total = 0;
+        foreach ($data['cart'] as $item) {
+            $total += $item['price'] * $item['quantity'];
+        }
+
+        $data['total'] = $total;
+
         return view('menu/cart', $data);
     }
+
 
     public function add()
     {
