@@ -23,7 +23,7 @@ class ProductModel extends Model
     public function searchProducts($keyword)
     {
         return $this->like('name', $keyword)
-            //->orLike('name', $keyword) // Jika ada kolom deskripsi 
+            //->orLike('price', $keyword) // Jika ada kolom deskripsi 
             ->findAll();
     }
 

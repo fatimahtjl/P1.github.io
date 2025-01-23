@@ -100,7 +100,7 @@
                             Stock : <?= htmlspecialchars($product['stock'], ENT_QUOTES, 'UTF-8'); ?>
                         </p>
                         <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                            Price : <?= number_format($product['price'], 2); ?>
+                            Price : Rp<?= number_format($product['price'], 2); ?>
                         </p>
                     </div>
                     <form action="/cart/add" method="post" class="p-2 m-2">

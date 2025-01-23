@@ -37,4 +37,12 @@ class CartModel extends Model
     {
         $this->where('id_pembeli', session()->get('id_pembeli'))->delete();
     }
+
+    public function getTotalPriceByBuyer()
+    {
+        return $this->select('id_pembeli, SUM(price * quantity) AS total_price')
+            ->groupBy('id_pembeli')
+            ->having('COUNT(product_id) > 1')
+            ->findAll();
+    }
 }

@@ -27,13 +27,13 @@
 
                                     <span
                                         class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
-                                        Transaksi
+                                        User
                                     </span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="<?= base_url('adminTransaction') ?>"
+                                <a href="<?= base_url('admin/Transaction') ?>"
                                     class="group relative flex justify-center rounded px-2 py-1.5 text-white hover:bg-gray-50 hover:text-gray-700">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="size-5 opacity-75" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -43,7 +43,7 @@
 
                                     <span
                                         class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
-                                        Barang
+                                        Transaksi
                                     </span>
                                 </a>
                             </li>
@@ -59,7 +59,23 @@
 
                                     <span
                                         class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
-                                        Invoices
+                                        Barang
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?= base_url('dashboard') ?>"
+                                    class="group relative flex justify-center rounded px-2 py-1.5 text-white hover:bg-gray-50 hover:text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5 opacity-75">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
+                                    </svg>
+
+                                    <span
+                                        class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
+                                        Cek Dashboard
                                     </span>
                                 </a>
                             </li>
@@ -158,7 +174,7 @@
             // Show modal
             $('.edit-button').click(function () {
                 const id = $(this).data('id');
-                $.get(`/adminTransaction/getTransaction/${id}`, function (data) {
+                $.get(`/admin/Transaction/getTransaction/${id}`, function (data) {
                     $('#editId').val(data.id);
                     $('#editStatus').val(data.status);
                     $('#editModal').removeClass('hidden');
@@ -175,7 +191,7 @@
                 e.preventDefault();
                 const id = $('#editId').val();
                 const formData = $(this).serialize();
-                $.post(`/adminTransaction/updateTransaction/${id}`, formData, function (response) {
+                $.post(`/admin/Transaction/updateTransaction/${id}`, formData, function (response) {
                     alert(response.message);
                     location.reload();
                 }).fail(function (xhr) {
@@ -187,7 +203,7 @@
             $('.delete-button').click(function () {
                 const id = $(this).data('id');
                 if (confirm('Apakah Anda yakin ingin menghapus transaksi ini?')) {
-                    $.post(`/adminTransaction/deleteTransaction/${id}`, function (response) {
+                    $.post(`/admin/Transaction/deleteTransaction/${id}`, function (response) {
                         alert(response.message);
                         location.reload();
                     });

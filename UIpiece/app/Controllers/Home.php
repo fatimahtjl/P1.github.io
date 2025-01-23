@@ -23,6 +23,14 @@ class Home extends BaseController
     {
         return view('halaman/admin');
     }
+    public function promo(): string
+    {
+        return view('menu/promodash');
+    }
+    public function prodash(): string
+    {
+        return view('menu/promo');
+    }
 
     public function __construct()
     {
@@ -96,6 +104,7 @@ class Home extends BaseController
         ]);
 
         if ($user['role'] == 'admin') {
+            
             return redirect()->to('/admin');
         } else {
             return redirect()->to('/dashboard');
