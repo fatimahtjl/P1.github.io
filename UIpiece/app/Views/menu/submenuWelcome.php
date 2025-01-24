@@ -44,7 +44,7 @@
 
         <div class="flex justify-end items-end mb-12 mr-5">
             <div class="mr-1">
-                <a href="<?= base_url('menu') ?>"
+                <a href="<?= base_url('visit/menu') ?>"
                     class="inline-block rounded-md border-e px-4 py-2 text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 focus:relative">Back</a>
             </div>
 
