@@ -4,12 +4,8 @@ namespace App\Controllers;
 
 use App\Models\modelMember;
 use CodeIgniter\Controller;
-
-;
-
 class Home extends BaseController
 {
-
     protected $modelMember;
     public function index(): string
     {

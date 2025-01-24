@@ -43,7 +43,8 @@
 
         <div class="flex justify-end items-end mb-12 mr-5">
             <div class="mr-1">
-                <a href="<?= base_url('menu') ?>" class="inline-block rounded-md border-e px-4 py-2 text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 focus:relative">Back</a>
+                <a href="<?= base_url('menu') ?>"
+                    class="inline-block rounded-md border-e px-4 py-2 text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 focus:relative">Back</a>
             </div>
 
             <form action="/cart/add" method="post" class="">
@@ -53,7 +54,7 @@
                 <span class="inline-flex overflow-hidden rounded-md border bg-gray-900 shadow-sm ml-3">
                     <button
                         class="inline-block border-e px-4 py-2 text-sm font-medium bg-green-500 text-white hover:bg-green-600 focus:relative">
-                        Create Order
+                        Add Cart
                     </button>
 
                     <button class="inline-block px-4 py-2 bg-green-500 text-white hover:bg-green-600 focus:relative"
@@ -71,6 +72,7 @@
             <p class="text-gray-700">No Item</p>
         <?php endif; ?>
     </div>
+
 
     <!-- CONTENT 2 END -->
 
